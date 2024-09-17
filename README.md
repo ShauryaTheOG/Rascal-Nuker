@@ -31,3 +31,8 @@ Python version:
 - Discord: legendwarri0r 
 - Server¹: discord.gg/hxckers
 - Server²: discord.gg/intimacy
+## Preview
+https://i.imgur.com/gocvhYf.jpeg
+https://i.imgur.com/oC90cVO.jpeg
+https://i.imgur.com/9iayhFs.jpeg
+https://i.imgur.com/v8HuDqK.jpeg
