@@ -33,3 +33,6 @@ Python version:
 - Server²: discord.gg/intimacy
 ## Preview
 ![Interface](https://github.com/user-attachments/assets/67229ca1-fd3e-424a-98f7-e76f900b987b)
+![preview1](https://github.com/user-attachments/assets/6a732c6a-aec9-41f8-a44a-47acfeeb4780)
+![preview2](https://github.com/user-attachments/assets/270ca10e-2900-4a4a-b0b7-a848f58f467a)
+![preview3](https://github.com/user-attachments/assets/0767b5c5-8c77-4d36-838a-a1765114fb8e)
