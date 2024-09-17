@@ -1,0 +1,22 @@
+{
+    "token": "bot_token",
+    "proxy": false,
+    "nuke": {
+        "channels_name": [
+            "rascals runs cord",
+            "maa chod di hamne",
+            "nigga server fxcker up",
+            "chud gya"
+        ],
+        "roles_name": [
+            "maa ka lund",
+            "rascals runs u",
+            "fxcking bitch"
+        ],
+        "messages_content": [
+            "@everyone discord.gg/hxckers",
+            "@everyone Warrior Jija runs cord discord.gg/hxckers",
+            "@everyone Warrior Jija fxcked you discord.gg/hxckers"
+        ]
+    }
+}
