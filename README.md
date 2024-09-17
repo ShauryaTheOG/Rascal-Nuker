@@ -13,13 +13,13 @@ Python version:
 - [ ] Change Guild Name
 - [ ] Change Guild Icon
 - [ ] Change Vanity
-- [ ] Nickname All
+- [x] Lock Channels
 - [x] Ban all members
 - [x] Kick all members
 - [x] Prune members
 - [x] Create Channels
 - [x] Create Roles
-- [ ] Create Emojis
+- [x] Create Emojis
 - [ ] Create Stickers
 - [x] Delete Channels
 - [x] Delete Roles
