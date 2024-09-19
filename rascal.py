@@ -409,11 +409,11 @@ class Rascal:
             
         elif ans == "10":
             try:
-                response = self.session.get("https://github.com/notspeezy/Rascal-Nuker/releases/latest")
+                response = self.session.get("https://github.com/WarriorDev69/Rascal-Nuker.git")
                 check_version = response.headers.get('location').split('/')[7].split('v')[1]
                 if VERSION != check_version:
                     print("{}({}Rascal{}) You're using an outdated version!".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m"))
-                    webbrowser.open(f"https://github.com/notspeezy/Rascal-Nuker/releases/tag/{check_version}")
+                    webbrowser.open(f"https://github.com/WarriorDev69/Rascal-Nuker/releases/tag/{check_version}")
                 else:
                     print("{}({}Rascal{}) You're using the current version!".format("\x1b[0m", "\x1b[38;5;9m", "\x1b[0m"))
             except:
